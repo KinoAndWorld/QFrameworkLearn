@@ -5,7 +5,7 @@ namespace ProjectSurvivor
 {
 	public partial class Enemy : ViewController
 	{
-		public int HP = 3;
+		public float HP = 3;
 		void Start()
 		{
 			// Code Here
@@ -19,9 +19,10 @@ namespace ProjectSurvivor
 			if (HP <= 0)
 			{
 				this.DestroyGameObjGracefully();
-				UIKit.OpenPanel<GamePassPanel>();
-
+				//UIKit.OpenPanel<GamePassPanel>();
 				Global.Exp.Value++;
+
+
 			}
 		}
 	}

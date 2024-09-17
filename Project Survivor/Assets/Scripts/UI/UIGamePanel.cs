@@ -12,10 +12,60 @@ namespace ProjectSurvivor
 		protected override void OnInit(IUIData uiData = null)
 		{
 			mData = uiData as UIGamePanelData ?? new UIGamePanelData();
-			// please add init code here
+
+
+			/// 时间
+			Global.CurrentTime.RegisterWithInitValue(value => {
+                if (Time.frameCount % 30 == 0) {
+					var curSecs = Mathf.FloorToInt(value);
+					var min = curSecs / 60;
+					var sec = curSecs % 60;
+					TimeLabel.text = "时间：" + $"{min:00}:{sec:00}";
+				}
+				
+			}).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+			var enemyGenarator = FindObjectOfType<EnemyGenerator>();
+
+			ActionKit.OnUpdate.Register(() => {
+				Global.CurrentTime.Value += Time.deltaTime;
+                if (Global.CurrentTime.Value >= 30 && 
+					enemyGenarator.WaveFinish && 
+					!FindObjectOfType<Enemy>(false)) {
+
+					UIKit.OpenPanel<GamePassPanel>();
+					Global.ResetData();
+				}
+			}).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+
+			// 经验值
 			Global.Exp.RegisterWithInitValue(value => {
 				ExpLabel.text = "经验值：" + value;
+
+                if (value >= 5 ) {
+					Global.Exp.Value -= 5;
+					Global.Level.Value++;
+                }
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+			Global.Level.RegisterWithInitValue(value => {
+				LevelLabel.text = "等级：" + value;
+			}).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+
+			Global.Level.Register(value => {
+				UpgradeButton.Show();
+				Time.timeScale = 0;
+			}).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+			UpgradeButton.Hide();
+			UpgradeButton.onClick.AddListener(() => {
+				Time.timeScale = 1;
+				UpgradeButton.Hide();
+
+				Player.Instance.simpleAbility.damange.Value *= 1.5f;
+			});
 		}
 		
 		protected override void OnOpen(IUIData uiData = null)

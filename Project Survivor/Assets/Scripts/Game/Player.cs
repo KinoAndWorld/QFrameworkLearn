@@ -9,9 +9,13 @@ namespace ProjectSurvivor
 		public static Player Instance;
 		public float moveSpeed = 5.0f;
 
+		public SimpleAbility simpleAbility;
+
 		private void Awake()
 		{
 			Instance = this;
+			simpleAbility = FindObjectOfType<SimpleAbility>();
+
 		}
 
 		private void OnDestroy() {
@@ -23,11 +27,12 @@ namespace ProjectSurvivor
 			Sprite.color = Color.green;
 			HurtBox.OnTriggerEnter2DEvent(collider2D =>
 			{
-				UIKit.OpenPanel<GameOverPanel>();
+				//UIKit.OpenPanel<GameOverPanel>();
 
-				collider2D.transform.root.gameObject.DestroySelfGracefully();
+				//collider2D.transform.root.gameObject.DestroySelfGracefully();
+				//Global.ResetData();
 
-				this.DestroyGameObjGracefully();
+				//this.DestroyGameObjGracefully();
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);
 		}
 
