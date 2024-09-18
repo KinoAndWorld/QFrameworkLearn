@@ -19,6 +19,7 @@ namespace ProjectSurvivor
             Level.Value = 1;
             CurrentTime.Value = 0.0f;
             Player.Instance.simpleAbility.damange.Value = 1.0f;
+            EnemyGenerator.EmemyCount.Value = 0;
         }
     }
 }

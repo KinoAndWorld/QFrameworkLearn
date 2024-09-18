@@ -29,9 +29,8 @@ namespace ProjectSurvivor
 
 			ActionKit.OnUpdate.Register(() => {
 				Global.CurrentTime.Value += Time.deltaTime;
-                if (Global.CurrentTime.Value >= 30 && 
-					enemyGenarator.WaveFinish && 
-					!FindObjectOfType<Enemy>(false)) {
+                if (enemyGenarator.WaveFinish &&
+					EnemyGenerator.EmemyCount.Value == 0) {
 
 					UIKit.OpenPanel<GamePassPanel>();
 					Global.ResetData();
@@ -66,6 +65,11 @@ namespace ProjectSurvivor
 
 				Player.Instance.simpleAbility.damange.Value *= 1.5f;
 			});
+
+			// 敌人数量
+			EnemyGenerator.EmemyCount.RegisterWithInitValue(value => {
+				EnemyCountLabel.text = "敌人数量：" + value;
+			}).UnRegisterWhenGameObjectDestroyed(gameObject);
 		}
 		
 		protected override void OnOpen(IUIData uiData = null)

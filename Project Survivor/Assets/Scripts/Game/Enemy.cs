@@ -9,9 +9,14 @@ namespace ProjectSurvivor
 		void Start()
 		{
 			// Code Here
+			EnemyGenerator.EmemyCount.Value++;
 		}
 
-		private void Update() {
+        private void OnDestroy() {
+			EnemyGenerator.EmemyCount.Value--;
+		}
+
+        private void Update() {
 			if (Player.Instance) {
 				Vector3 direction = (Player.Instance.transform.position - transform.position).normalized;
 				transform.Translate(direction * Time.deltaTime * 2.0f);

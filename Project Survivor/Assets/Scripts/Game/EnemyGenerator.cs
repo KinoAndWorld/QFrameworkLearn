@@ -19,6 +19,7 @@ namespace ProjectSurvivor
 
 		public int CurrentWave = 0;
 		public bool WaveFinish = false;
+		public static BindableProperty<int> EmemyCount = new BindableProperty<int>(0);
 
 
 		[SerializeField]
