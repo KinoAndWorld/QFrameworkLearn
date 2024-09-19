@@ -54,16 +54,22 @@ namespace ProjectSurvivor
 
 
 			Global.Level.Register(value => {
-				UpgradeButton.Show();
+				UpgradeContainer.Show();
 				Time.timeScale = 0;
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);
 
-			UpgradeButton.Hide();
+			UpgradeContainer.Hide();
 			UpgradeButton.onClick.AddListener(() => {
 				Time.timeScale = 1;
-				UpgradeButton.Hide();
+				UpgradeContainer.Hide();
 
 				Player.Instance.simpleAbility.damange.Value *= 1.5f;
+			});
+			UpgradeAtkFreButton.onClick.AddListener(() => {
+				Time.timeScale = 1;
+				UpgradeContainer.Hide();
+
+				Player.Instance.simpleAbility.frequent.Value *= 0.8f;
 			});
 
 			// 敌人数量

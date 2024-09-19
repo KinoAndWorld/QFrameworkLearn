@@ -9,6 +9,7 @@ namespace ProjectSurvivor
 		private float currentSec = 0.0f;
 
 		public BindableProperty<float> damange = new BindableProperty<float>(1);
+		public BindableProperty<float> frequent = new BindableProperty<float>(1.5f);
 
 		void Start()
 		{
@@ -18,7 +19,7 @@ namespace ProjectSurvivor
 		private void Update()
 		{
 			currentSec += Time.deltaTime;
-			if (currentSec > 1.5)
+			if (currentSec > frequent.Value)
 			{
 				currentSec = 0.0f;
 
