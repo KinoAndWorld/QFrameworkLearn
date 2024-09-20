@@ -27,12 +27,15 @@ namespace ProjectSurvivor
 			Sprite.color = Color.green;
 			HurtBox.OnTriggerEnter2DEvent(collider2D =>
 			{
-				//UIKit.OpenPanel<GameOverPanel>();
-
-				//collider2D.transform.root.gameObject.DestroySelfGracefully();
-				//Global.ResetData();
-
-				//this.DestroyGameObjGracefully();
+				var hitBox = collider2D.GetComponent<HitBox>();
+				if (hitBox && hitBox.Owner.CompareTag("Enemy"))
+				{
+					"被击中，受伤".LogInfo();
+					// UIKit.OpenPanel<GameOverPanel>();
+					// collider2D.transform.root.gameObject.DestroySelfGracefully();
+					// Global.ResetData();
+					// this.DestroyGameObjGracefully();
+				}
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);
 		}
 

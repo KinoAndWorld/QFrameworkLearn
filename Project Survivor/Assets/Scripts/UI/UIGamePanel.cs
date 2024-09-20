@@ -40,10 +40,9 @@ namespace ProjectSurvivor
 
 			// 经验值
 			Global.Exp.RegisterWithInitValue(value => {
-				ExpLabel.text = "经验值：" + value;
-
-                if (value >= 5 ) {
-					Global.Exp.Value -= 5;
+				ExpLabel.text = $"经验值：({value}/{Global.ToNextLvExp()})";
+                if (value >= Global.ToNextLvExp()) {
+					Global.Exp.Value -= Global.ToNextLvExp();
 					Global.Level.Value++;
                 }
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);
@@ -52,12 +51,17 @@ namespace ProjectSurvivor
 				LevelLabel.text = "等级：" + value;
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);
 
-
 			Global.Level.Register(value => {
 				UpgradeContainer.Show();
 				Time.timeScale = 0;
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);
 
+			// 金币
+			Global.Coin.RegisterWithInitValue(value => {
+				CoinLabel.text = $"金币：{value}";
+			}).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+			// 升级菜单
 			UpgradeContainer.Hide();
 			UpgradeButton.onClick.AddListener(() => {
 				Time.timeScale = 1;

@@ -1,0 +1,241 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/UIKit.Editor.csproj": {}
+  },
+  "projects": {
+    "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.CoreKit.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.CoreKit.csproj",
+        "projectName": "QFramework.CoreKit",
+        "projectPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.CoreKit.csproj",
+        "packagesPath": "/Users/kino/.nuget/packages/",
+        "outputPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/Temp/obj/Debug/QFramework.CoreKit/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/kino/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.csproj": {
+                "projectPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.csproj",
+        "projectName": "QFramework",
+        "projectPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.csproj",
+        "packagesPath": "/Users/kino/.nuget/packages/",
+        "outputPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/Temp/obj/Debug/QFramework/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/kino/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/UIKit.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/UIKit.csproj",
+        "projectName": "UIKit",
+        "projectPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/UIKit.csproj",
+        "packagesPath": "/Users/kino/.nuget/packages/",
+        "outputPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/Temp/obj/Debug/UIKit/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/kino/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.CoreKit.csproj": {
+                "projectPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.CoreKit.csproj"
+              },
+              "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.csproj": {
+                "projectPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/UIKit.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/UIKit.Editor.csproj",
+        "projectName": "UIKit.Editor",
+        "projectPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/UIKit.Editor.csproj",
+        "packagesPath": "/Users/kino/.nuget/packages/",
+        "outputPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/Temp/obj/Debug/UIKit.Editor/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/kino/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.CoreKit.csproj": {
+                "projectPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.CoreKit.csproj"
+              },
+              "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.csproj": {
+                "projectPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/QFramework.csproj"
+              },
+              "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/UIKit.csproj": {
+                "projectPath": "/Users/kino/qfLearn/QFrameworkLearn/Project Survivor/UIKit.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

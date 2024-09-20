@@ -23,11 +23,9 @@ namespace ProjectSurvivor
 			}
 			if (HP <= 0)
 			{
+				// 死亡掉落
+				Global.GeneratePowerUp(gameObject);
 				this.DestroyGameObjGracefully();
-				//UIKit.OpenPanel<GamePassPanel>();
-				Global.Exp.Value++;
-
-
 			}
 		}
 	}

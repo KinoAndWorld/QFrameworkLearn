@@ -19,15 +19,18 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: ProjectSurvivor.Enemy
-      PathToRoot: Enemy
-      MemberName: Enemy
+    - TypeName: ProjectSurvivor.Exp
+      PathToRoot: Exp
+      MemberName: Exp
+    - TypeName: ProjectSurvivor.Coin
+      PathToRoot: Coin
+      MemberName: Coin
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: EnemyGenerator
+    ClassName: PowerUpManager
     Namespace: ProjectSurvivor
     MainCode: "using UnityEngine;\nusing QFramework;\n\nnamespace ProjectSurvivor\n{\n\tpublic
-      partial class EnemyGenerator : ViewController\n\t{\n\t\tvoid Start()\n\t\t{\n\t\t\t//
+      partial class PowerUpManager : ViewController\n\t{\n\t\tvoid Start()\n\t\t{\n\t\t\t//
       Code Here\n\t\t}\n\t}\n}\n"
-    DesignerCode: "// Generate Id:dbd7bef5-afab-4590-ad46-a65f2331d713\nusing UnityEngine;\n\nnamespace
-      ProjectSurvivor\n{\n\tpublic partial class EnemyGenerator\n\t{\n\n\t\tpublic
-      ProjectSurvivor.Enemy Enemy;\n\n\t}\n}\n"
+    DesignerCode: "// Generate Id:47a926ec-a7c0-4cc3-ad6f-84f73a27216f\nusing UnityEngine;\n\nnamespace
+      ProjectSurvivor\n{\n\tpublic partial class PowerUpManager\n\t{\n\n\t\tpublic
+      ProjectSurvivor.Exp Exp;\n\n\t\tpublic ProjectSurvivor.Coin Coin;\n\n\t}\n}\n"

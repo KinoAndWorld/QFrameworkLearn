@@ -65,7 +65,6 @@ namespace ProjectSurvivor
 						// 生成敌人
 						curWave.enemyPrefab.Instantiate().Position(genrPos).Show();
 					}
-
 				}
 
                 if (_curWaveSecs >= curWave.seconds) {
