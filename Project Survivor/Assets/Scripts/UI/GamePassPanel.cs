@@ -18,7 +18,8 @@ namespace ProjectSurvivor
 			{
 				if (Input.GetKeyDown(KeyCode.Space))
 				{
-					SceneManager.LoadScene("SampleScene");
+					Global.ResetData();
+					SceneManager.LoadScene("Game");
 					this.CloseSelf();
 				}
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);

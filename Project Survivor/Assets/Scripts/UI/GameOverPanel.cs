@@ -13,15 +13,25 @@ namespace ProjectSurvivor
 		protected override void OnInit(IUIData uiData = null)
 		{
 			mData = uiData as GameOverPanelData ?? new GameOverPanelData();
+
+			Time.timeScale = 0;
 			// please add init code here
 			ActionKit.OnUpdate.Register(() =>
 			{
 				if (Input.GetKeyDown(KeyCode.Space))
 				{
-					SceneManager.LoadScene("SampleScene");
+					Global.ResetData();
+					Time.timeScale = 1;
+					SceneManager.LoadScene("Game");
 					this.CloseSelf();
 				}
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+			BackToHomeButton.onClick.AddListener(() => {
+				this.CloseSelf();
+				Time.timeScale = 1;
+				SceneManager.LoadScene("GameStart");
+			});
 		}
 
 		protected override void OnOpen(IUIData uiData = null)

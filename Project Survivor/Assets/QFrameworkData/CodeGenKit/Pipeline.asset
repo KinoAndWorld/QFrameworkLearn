@@ -18,19 +18,12 @@ MonoBehaviour:
     GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos:
-    - TypeName: ProjectSurvivor.Exp
-      PathToRoot: Exp
-      MemberName: Exp
-    - TypeName: ProjectSurvivor.Coin
-      PathToRoot: Coin
-      MemberName: Coin
+    BindInfos: []
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: PowerUpManager
+    ClassName: GameStartController
     Namespace: ProjectSurvivor
-    MainCode: "using UnityEngine;\nusing QFramework;\n\nnamespace ProjectSurvivor\n{\n\tpublic
-      partial class PowerUpManager : ViewController\n\t{\n\t\tvoid Start()\n\t\t{\n\t\t\t//
-      Code Here\n\t\t}\n\t}\n}\n"
-    DesignerCode: "// Generate Id:47a926ec-a7c0-4cc3-ad6f-84f73a27216f\nusing UnityEngine;\n\nnamespace
-      ProjectSurvivor\n{\n\tpublic partial class PowerUpManager\n\t{\n\n\t\tpublic
-      ProjectSurvivor.Exp Exp;\n\n\t\tpublic ProjectSurvivor.Coin Coin;\n\n\t}\n}\n"
+    MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace ProjectSurvivor\r\n{\r\n\tpublic
+      partial class GameStartController : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:afc181fc-9f29-4a8a-afe9-cd21a5312ca6\r\nusing UnityEngine;\r\n\r\nnamespace
+      ProjectSurvivor\r\n{\r\n\tpublic partial class GameStartController\r\n\t{\r\n\r\n\t}\r\n}\r\n"

@@ -37,6 +37,7 @@ namespace ProjectSurvivor
 		}
 
 		private void Update() {
+
             if (curWave == null) {
                 if (enemyWaveQueue.Count > 0) {
 					curWave = enemyWaveQueue.Dequeue();
