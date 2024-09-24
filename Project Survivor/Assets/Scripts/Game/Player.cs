@@ -7,6 +7,9 @@ namespace ProjectSurvivor
 	{
 
 		public static Player Instance;
+
+		public BindableProperty<int> HP = new BindableProperty<int>(5);
+
 		public float moveSpeed = 5.0f;
 
 		public SimpleAbility simpleAbility;
@@ -31,10 +34,14 @@ namespace ProjectSurvivor
 				if (hitBox && hitBox.Owner.CompareTag("Enemy"))
 				{
 					"被击中，受伤".LogInfo();
-                    UIKit.OpenPanel<GameOverPanel>();
-                    collider2D.transform.root.gameObject.DestroySelfGracefully();
-                    Global.ResetData();
-                    this.DestroyGameObjGracefully();
+
+					HP.Value -= 1;
+                    if (HP.Value <= 0) {
+						UIKit.OpenPanel<GameOverPanel>();
+						collider2D.transform.root.gameObject.DestroySelfGracefully();
+						Global.ResetData();
+						this.DestroyGameObjGracefully();
+					}
 				}
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);
 		}

@@ -1,4 +1,4 @@
-// Generate Id:47a926ec-a7c0-4cc3-ad6f-84f73a27216f
+// Generate Id:403094f0-0121-46b5-ad50-a9678dfda8fa
 using UnityEngine;
 
 namespace ProjectSurvivor
@@ -7,6 +7,8 @@ namespace ProjectSurvivor
 	{
 
 		public ProjectSurvivor.Exp Exp;
+
+		public ProjectSurvivor.Bomb Bomb;
 
 		public ProjectSurvivor.Coin Coin;
 

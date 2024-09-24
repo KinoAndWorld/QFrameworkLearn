@@ -29,9 +29,9 @@ namespace ProjectSurvivor
 				{
 					var distance = (item.transform.position - Player.Instance.transform.position).magnitude;
 					//("distance = " + distance.ToString()).LogInfo();
-					if (distance <= 5.0f)
+					if (distance <= 3.0f)
 					{
-						ShinkObj(item);
+						item.Hurt(damange.Value);
 					}
 				}
 				// var nearByEms = enemies.Where(t =>
@@ -43,19 +43,6 @@ namespace ProjectSurvivor
 			}
 		}
 
-		private Enemy ShinkObj(Enemy obj)
-		{
-			obj.Sprite.color = Color.red;
-			var enemyRef = obj;
-			ActionKit.Delay(0.3f, () =>
-			{
-				if (enemyRef)
-				{
-					enemyRef.HP-= damange.Value;
-					enemyRef.Sprite.color = Color.white;
-				}
-			}).StartGlobal();
-			return obj;
-		}
+		
 	}
 }

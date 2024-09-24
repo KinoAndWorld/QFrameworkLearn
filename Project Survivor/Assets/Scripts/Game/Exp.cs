@@ -17,6 +17,7 @@ namespace ProjectSurvivor
 			var collectArea = other.GetComponent<CollectableArea>();
 			if (collectArea)
 			{
+				AudioKit.PlaySound("exp");
 				Global.Exp.Value += expValue;
 				this.DestroyGameObjGracefully();	
 			}

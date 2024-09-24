@@ -13,6 +13,10 @@ namespace ProjectSurvivor
 		{
 			mData = uiData as UIGamePanelData ?? new UIGamePanelData();
 
+			Player.Instance.HP.RegisterWithInitValue(value => {
+				HPLabel.text = "血量：" + value;
+
+			}).UnRegisterWhenGameObjectDestroyed(gameObject);
 
 			/// 时间
 			Global.CurrentTime.RegisterWithInitValue(value => {

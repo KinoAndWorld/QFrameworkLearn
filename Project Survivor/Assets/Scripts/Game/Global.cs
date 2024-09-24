@@ -8,6 +8,7 @@ namespace ProjectSurvivor
 {
     public class Global : Architecture<Global>
     {
+
         public static BindableProperty<int> Exp = new BindableProperty<int>();
         public static BindableProperty<int> Coin = new BindableProperty<int>();
         public static BindableProperty<int> Level = new BindableProperty<int>(1);
@@ -45,6 +46,7 @@ namespace ProjectSurvivor
             Level.Value = 1;
             CurrentTime.Value = 0.0f;
             if (Player.Instance) {
+                Player.Instance.HP.Value = 5;
                 Player.Instance.simpleAbility.damange.Value = 1.0f;
                 Player.Instance.simpleAbility.frequent.Value = 1.5f;
             }
@@ -75,10 +77,17 @@ namespace ProjectSurvivor
                 .Position(target.Position())
                 .Show();
             }
+
+            random = Random.Range(0, 1f);
+            if (random < 0.1f) {
+                "掉落炸弹".LogInfo();
+                PowerUpManager.Instance.Bomb.Instantiate()
+                .Position(target.Position())
+                .Show();
+            }
         }
 
         protected override void Init() {
-
         }
     }
 }
