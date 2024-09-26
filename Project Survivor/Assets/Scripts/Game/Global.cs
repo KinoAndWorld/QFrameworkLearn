@@ -46,7 +46,7 @@ namespace ProjectSurvivor
             Level.Value = 1;
             CurrentTime.Value = 0.0f;
             if (Player.Instance) {
-                Player.Instance.HP.Value = 5;
+                Player.Instance.HP.Value = 10;
                 Player.Instance.simpleAbility.damange.Value = 1.0f;
                 Player.Instance.simpleAbility.frequent.Value = 1.5f;
             }
@@ -63,7 +63,7 @@ namespace ProjectSurvivor
             // 
             var random = Random.Range(0, 1f);
 
-            if (random < ExpDropPrec.Value)
+            if (random < 1.0f/*ExpDropPrec.Value*/)
             {
                 PowerUpManager.Instance.Exp.Instantiate()
                 .Position(target.Position())
@@ -88,6 +88,9 @@ namespace ProjectSurvivor
         }
 
         protected override void Init() {
+            // this.RegisterSystem(new CoinUpgradeSystem());
+            this.RegisterSystem(new CoinUpgradeSystem());
+            
         }
     }
 }

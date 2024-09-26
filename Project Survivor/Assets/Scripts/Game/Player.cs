@@ -1,5 +1,6 @@
 using UnityEngine;
 using QFramework;
+using Unity.VisualScripting;
 
 namespace ProjectSurvivor
 {
@@ -8,7 +9,7 @@ namespace ProjectSurvivor
 
 		public static Player Instance;
 
-		public BindableProperty<int> HP = new BindableProperty<int>(5);
+		public BindableProperty<int> HP = new BindableProperty<int>(10);
 
 		public float moveSpeed = 5.0f;
 
@@ -48,12 +49,13 @@ namespace ProjectSurvivor
 
 		private void Update()
 		{
-			float hor = Input.GetAxis("Horizontal");
-			float vel = Input.GetAxis("Vertical");
+			float hor = Input.GetAxisRaw("Horizontal");
+			float vel = Input.GetAxisRaw("Vertical");
 
 			Vector2 direction = new Vector2(hor, vel).normalized;
-			SelfRigidbody.velocity = direction * moveSpeed;
-
+			Vector2 lerpVel = direction * moveSpeed;
+			var pow = 1.0f - Mathf.Exp(-Time.deltaTime * 20);
+			SelfRigidbody.velocity = Vector2.Lerp(SelfRigidbody.velocity, lerpVel, pow);
 			// ("log hor = " + hor.ToString() + ", vel = " + vel.ToString()).LogInfo();
 			// ("direction = " + direction.ToString() + ", velocity = " + (direction * 10.0f).ToString()).LogInfo();
 		}

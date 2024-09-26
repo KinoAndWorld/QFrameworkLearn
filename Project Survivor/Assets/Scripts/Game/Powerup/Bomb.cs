@@ -20,6 +20,7 @@ namespace ProjectSurvivor
 					item.Hurt(item.HP);
                 }
 
+				CameraController.Shake();
 
 				this.DestroyGameObjGracefully();
 			}

@@ -38,6 +38,9 @@ namespace ProjectSurvivor
 			Sprite.color = Color.red;
 			var enemyRef = this;
 			AudioKit.PlaySound("hit");
+
+			FloatTextController.Play(transform.position, damange.ToString());
+
 			ActionKit.Delay(0.2f, () =>
 			{
 				if (enemyRef) {
