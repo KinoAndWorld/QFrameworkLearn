@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
@@ -14,41 +15,46 @@ namespace ProjectSurvivor
 	{
 		private void Awake()
 		{
-			CoinPrecUpgrade.onClick.AddListener(() => {  });
-			ExpPrecUpgrade.onClick.AddListener(() => { Global.ExpDropPrec.Value += 0.1f; });
+			CoinUpgradeItemTemplate.Hide();
 
-			foreach (var coinUpgradeItem in this.GetSystem<CoinUpgradeSystem>().mItems)
+			CoinUpgradeSystem.OnCoinSystemUpgraded.Register((Refresh)).UnRegisterWhenGameObjectDestroyed(gameObject);
+			
+			Refresh();
+			
+			CloseButton.onClick.AddListener(this.Hide);
+		}
+
+		public void Refresh()
+		{
+			CoinUpgradeItemRoot.DestroyChildren();
+			
+			foreach (var coinUpgradeItem in this.GetSystem<CoinUpgradeSystem>().Items.Where(e => e.ConditionCheck()))
 			{
 				CoinUpgradeItemTemplate.InstantiateWithParent(CoinUpgradeItemRoot)
 					.Self(self =>
 					{
 						var itemCache = coinUpgradeItem;
-						self.GetComponentInChildren<Text>().text = coinUpgradeItem.Description;
+						self.GetComponentInChildren<Text>().text = coinUpgradeItem.Description + $" {coinUpgradeItem.Price}金币";
 						self.onClick.AddListener((() =>
 						{
 							itemCache.Upgrade();
 						}));
+						var selfCopy = self;
+						Global.Coin.RegisterWithInitValue(coin =>
+						{
+							CoinLabel.text = "金币：" + coin;
+							if (coin >= coinUpgradeItem.Price)
+							{
+								selfCopy.interactable = true;
+							}
+							else
+							{
+								selfCopy.interactable = false;
+							}
+						}).UnRegisterWhenGameObjectDestroyed(gameObject);
 					})
 					.Show();
 			}
-			
-			
-			CloseButton.onClick.AddListener(() => { this.Hide(); });
-
-			Global.Coin.RegisterWithInitValue(coin =>
-			{
-				CoinLabel.text = "金币：" + coin;
-				if (coin >= 5)
-				{
-					CoinPrecUpgrade.Show();
-					ExpPrecUpgrade.Show();
-				}
-				else
-				{
-					CoinPrecUpgrade.Hide();
-					ExpPrecUpgrade.Hide();
-				}
-			}).UnRegisterWhenGameObjectDestroyed(gameObject);
 		}
 
 		protected override void OnBeforeDestroy()

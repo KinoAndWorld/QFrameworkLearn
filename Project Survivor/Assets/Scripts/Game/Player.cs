@@ -9,7 +9,8 @@ namespace ProjectSurvivor
 
 		public static Player Instance;
 
-		public BindableProperty<int> HP = new BindableProperty<int>(10);
+		public BindableProperty<int> HP = new BindableProperty<int>();
+		public BindableProperty<int> MaxHP = new BindableProperty<int>(10);
 
 		public float moveSpeed = 5.0f;
 
@@ -19,7 +20,7 @@ namespace ProjectSurvivor
 		{
 			Instance = this;
 			simpleAbility = FindObjectOfType<SimpleAbility>();
-
+			HP.Value = MaxHP.Value;
 		}
 
 		private void OnDestroy() {

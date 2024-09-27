@@ -90,7 +90,7 @@ namespace ProjectSurvivor
         protected override void Init() {
             // this.RegisterSystem(new CoinUpgradeSystem());
             this.RegisterSystem(new CoinUpgradeSystem());
-            
+            this.RegisterSystem(new SaveSystem());
         }
     }
 }

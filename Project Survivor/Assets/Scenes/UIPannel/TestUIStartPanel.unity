@@ -424,6 +424,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 509659992}
     m_Modifications:
+    - target: {fileID: -7665183995980656181, guid: 650d466bafb7ab142bf4c92f909f0db1, type: 3}
+      propertyPath: ExpPrecUpgrade
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -7665183995980656181, guid: 650d466bafb7ab142bf4c92f909f0db1, type: 3}
+      propertyPath: CoinPrecUpgrade
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 763995230974298976, guid: 650d466bafb7ab142bf4c92f909f0db1, type: 3}
       propertyPath: m_Name
       value: UIGameStartPanel
