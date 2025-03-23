@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using script;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,90 +44,27 @@ public class New_Grid : MonoBehaviour
                     GameObject a;
                     a = Instantiate(grid, Vector3.zero, Quaternion.identity) as GameObject;
                     a.name = "grid" + (i + 1).ToString() + "-" + (j + 1).ToString();
-                    a.transform.parent = GameObject.Find("Canvas").gameObject.transform;
+                    a.transform.parent = OriginPicture.transform.parent.GetComponentInChildren<GridContainer>().transform;
+                    
                     RectTransform the_Rect = a.GetComponent<RectTransform>();
-                    the_Rect.anchoredPosition = new Vector2(50 + grid_size * j, 300 - grid_size * i);
+                    the_Rect.anchorMin = new Vector2(0f, 1.0f);
+                    the_Rect.anchorMax = new Vector2(0f, 1.0f);
+                    the_Rect.pivot = new Vector2(0f, 1.0f);
+                    // 生成在原位  =>   x 和 y 作1/6偏移  
+                    var offsetX = grid_size / 6.0f + grid_size / 3.0f * j;
+                    var offsetY = grid_size / 6.0f + grid_size / 3.0f * i;
+                    the_Rect.anchoredPosition = new Vector2(grid_size * j - offsetX, -(i * grid_size) + offsetY);
                     the_Rect.sizeDelta = new Vector2(grid_size, grid_size);
+                    // 添加拖拽脚本
+                    a.AddComponent<DragHandler>();
+                    // 保存中心吸附位
+                    var center = new Vector2((the_Rect.anchoredPosition.x + grid_size) / 2.0f,
+                        (the_Rect.anchoredPosition.y + grid_size) / 2.0f);
+                    a.GetComponent<DragHandler>().targetPos = the_Rect.anchoredPosition;
                 }
             }
             
             GenerateRandomEdges(number);
-            
-            //初始化碎片的凹凸属性,测试用,需要替换为需要的初始化规则
-            // {
-            //     GameObject the_grid1;
-            //     the_grid1 = GameObject.Find("grid3-1");
-            //     grid Grid_mod1 = the_grid1.GetComponent<grid>();
-            //     Grid_mod1.circle_up = 1;
-            //     Grid_mod1.circle_right = -1;
-            //     //Grid_mod1.circle_down = -1;
-            //     //Grid_mod1.circle_left = -1;
-            //
-            //
-            //     GameObject the_grid2;
-            //     the_grid2 = GameObject.Find("grid3-2");
-            //     grid Grid_mod2 = the_grid2.GetComponent<grid>();
-            //     Grid_mod2.circle_up = -1;
-            //     Grid_mod2.circle_right = 1;
-            //     //Grid_mod2.circle_down = -1;
-            //     Grid_mod2.circle_left = 1;
-            //
-            //     GameObject the_grid3;
-            //     the_grid3 = GameObject.Find("grid3-3");
-            //     grid Grid_mod3 = the_grid3.GetComponent<grid>();
-            //     Grid_mod3.circle_up = -1;
-            //     //Grid_mod3.circle_right = -1;
-            //     //Grid_mod3.circle_down = -1;
-            //     Grid_mod3.circle_left = -1;
-            //
-            //     GameObject the_grid4;
-            //     the_grid4 = GameObject.Find("grid2-1");
-            //     grid Grid_mod4 = the_grid4.GetComponent<grid>();
-            //     Grid_mod4.circle_up = -1;
-            //     Grid_mod4.circle_right = -1;
-            //     Grid_mod4.circle_down = -1;
-            //     //Grid_mod4.circle_left = -1;
-            //
-            //     GameObject the_grid5;
-            //     the_grid5 = GameObject.Find("grid2-2");
-            //     grid Grid_mod5 = the_grid5.GetComponent<grid>();
-            //     Grid_mod5.circle_up = 1;
-            //     Grid_mod5.circle_right = 1;
-            //     Grid_mod5.circle_down = 1;
-            //     Grid_mod5.circle_left = 1;
-            //
-            //     GameObject the_grid6;
-            //     the_grid6 = GameObject.Find("grid2-3");
-            //     grid Grid_mod6 = the_grid6.GetComponent<grid>();
-            //     Grid_mod6.circle_up = -1;
-            //     //Grid_mod6.circle_right = -1;
-            //     Grid_mod6.circle_down = 1;
-            //     Grid_mod6.circle_left = -1;
-            //
-            //     GameObject the_grid7;
-            //     the_grid7 = GameObject.Find("grid1-1");
-            //     grid Grid_mod7 = the_grid7.GetComponent<grid>();
-            //     //Grid_mod7.circle_up = -1;
-            //     Grid_mod7.circle_right = 1;
-            //     Grid_mod7.circle_down = 1;
-            //     //Grid_mod7.circle_left = -1;
-            //
-            //     GameObject the_grid8;
-            //     the_grid8 = GameObject.Find("grid1-2");
-            //     grid Grid_mod8 = the_grid8.GetComponent<grid>();
-            //     //Grid_mod8.circle_up = -1;
-            //     Grid_mod8.circle_right = 1;
-            //     Grid_mod8.circle_down = -1;
-            //     Grid_mod8.circle_left = -1;
-            //
-            //     GameObject the_grid9;
-            //     the_grid9 = GameObject.Find("grid1-3");
-            //     grid Grid_mod9 = the_grid9.GetComponent<grid>();
-            //     //Grid_mod9.circle_up = -1;
-            //     //Grid_mod9.circle_right = -1;
-            //     Grid_mod9.circle_down = 1;
-            //     Grid_mod9.circle_left = -1;
-            // }
         }
     }
     
