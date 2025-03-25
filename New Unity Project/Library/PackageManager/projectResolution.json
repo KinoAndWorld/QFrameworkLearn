@@ -39,23 +39,13 @@
       "source": "registry",
       "testable": false
     },
-    "com.unity.ide.rider@3.0.31": {
+    "com.unity.ide.rider@3.0.35": {
       "name": "com.unity.ide.rider",
       "displayName": "JetBrains Rider Editor",
-      "resolvedPath": "C:\\Users\\Matth\\Documents\\GitHub\\QFrameworkLearn\\New Unity Project\\Library\\PackageCache\\com.unity.ide.rider@7921be93db40",
-      "fingerprint": "7921be93db40ec070fcb01ed82d1c3df1bbdddcd",
-      "editorCompatibility": "2019.2.6f1",
-      "version": "3.0.31",
-      "source": "registry",
-      "testable": false
-    },
-    "com.unity.ide.visualstudio@2.0.22": {
-      "name": "com.unity.ide.visualstudio",
-      "displayName": "Visual Studio Editor",
-      "resolvedPath": "C:\\Users\\Matth\\Documents\\GitHub\\QFrameworkLearn\\New Unity Project\\Library\\PackageCache\\com.unity.ide.visualstudio@8140e851d83e",
-      "fingerprint": "8140e851d83e922ca2021b04a89519de94ebe38c",
-      "editorCompatibility": "2019.4.25f1",
-      "version": "2.0.22",
+      "resolvedPath": "C:\\Users\\Matth\\Documents\\GitHub\\QFrameworkLearn\\New Unity Project\\Library\\PackageCache\\com.unity.ide.rider@7d01a2258732",
+      "fingerprint": "7d01a2258732f17d1f569657792eaba45b9633d4",
+      "editorCompatibility": "2019.4.6f1",
+      "version": "3.0.35",
       "source": "registry",
       "testable": false
     },
